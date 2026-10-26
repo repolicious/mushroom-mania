@@ -4,7 +4,7 @@
 
 Time to help Mario collect one of each mushroom in the forest. Using React under the hood to make the magic happen. This project was an introductory project to React. Focusing on data and components for a better understanding of how data is manipulated, communicated and displayed using React.
 
-Mushroom Mania was created by [Sarah Holder](https://github.com/sarahholder) in 2020. This repository is a copy of her original project, [sarahholder/mushroom-picker](https://github.com/sarahholder/mushroom-picker), with its full history. It has been updated to build with Vite, play well on phones, and serve its images and sounds locally instead of hotlinking them.
+Mushroom Mania was created by [Sarah Holder](https://github.com/sarahholder) in 2020. This repository is a copy of her original project, [sarahholder/mushroom-picker](https://github.com/sarahholder/mushroom-picker), with its full history. It has been updated to build with Vite, play well on phones, and serve its images, sounds and fonts locally instead of hotlinking them.
 
 Live site: coming soon
 
@@ -30,7 +30,7 @@ Live site: coming soon
 
 ## Run Locally
 
-Requires Node.js 20.19+ or 22.12+ (built and tested on Node 24).
+Requires Node.js 22.12+ (built and tested on Node 24).
 
 1. [Clone project](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 

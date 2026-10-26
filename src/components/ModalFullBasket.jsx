@@ -11,18 +11,18 @@ const ModalFullBasket = (props) => {
 
   return (
         <div className="modal container">
-          <Modal returnFocusAfterClose={focusAfterClose} isOpen size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+          <Modal returnFocusAfterClose={focusAfterClose} isOpen size="lg" labelledBy="win-title" centered>
             <ModalBody>
               <div>
               {
                   currentMushroom.isMagic ? (
                   <div>
-                    <h2 className="m-1 modal-h2">{currentMushroom.name}</h2>
+                    <h2 id="win-title" className="m-1 modal-h2">{currentMushroom.name}</h2>
                     <h3 className="modal-p m-1"> Magic Mushroom</h3>
                     <h3 className="modal-p m-1">The magic mushroom finished filling the basket!</h3>
                     </div>) : (
                   <div>
-                    <h2 className="m-1 modal-h2">FULL Basket</h2>
+                    <h2 id="win-title" className="m-1 modal-h2">FULL Basket</h2>
                     <h3 className="modal-p m-1">One of each type of normal mushrooms collected.</h3>
                     </div>)
                 }
