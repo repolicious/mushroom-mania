@@ -6,14 +6,12 @@ import {
 import './Modal.scss';
 
 const ModalFullBasket = (props) => {
-  const [open, setOpen] = useState(true);
   const [focusAfterClose] = useState(true);
-  const toggle = () => setOpen(!open);
-  const { currentMushroom } = props;
+  const { currentMushroom, onPlayAgain } = props;
 
   return (
         <div className="modal container">
-          <Modal returnFocusAfterClose={focusAfterClose} isOpen={open} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+          <Modal returnFocusAfterClose={focusAfterClose} isOpen size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
             <ModalBody>
               <div>
               {
@@ -29,7 +27,7 @@ const ModalFullBasket = (props) => {
                     </div>)
                 }
                 <h2 className="modal-p m-0">You WIN!</h2>
-                 <div><button className="btn btn-danger btn-game m-1" onClick={toggle}>Play Again</button></div>
+                 <div><button className="btn btn-danger btn-game m-1" onClick={onPlayAgain}>Play Again</button></div>
                 {
                   currentMushroom.isMagic ? (<img className="magic img-fluid" src={currentMushroom.imgUrl} alt="magic"/>) : (<div className="mario-clap"></div>)
                 }

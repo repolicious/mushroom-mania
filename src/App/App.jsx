@@ -74,7 +74,7 @@ class App extends React.Component {
           {modal}
       {
         // eslint-disable-next-line max-len
-        basket.length >= totalNormalMushrooms ? (<div className="d-flex flex-wrap justify-content-center align-items-center"><ModalFullBasket totalNormalMushrooms={totalNormalMushrooms} currentMushroom={currentMushroom}/></div>) : (<div></div>)
+        basket.length >= totalNormalMushrooms ? (<div className="d-flex flex-wrap justify-content-center align-items-center"><ModalFullBasket totalNormalMushrooms={totalNormalMushrooms} currentMushroom={currentMushroom} onPlayAgain={this.restart}/></div>) : (<div></div>)
       }
       <h1>MUSHROOM MANIA</h1>
         <div className="row">
