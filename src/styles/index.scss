@@ -1,8 +1,11 @@
-@import 'variables';
-@import '~bootstrap/dist/css/bootstrap.min.css';
-@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@use 'variables' as *;
 body {
-  background-image: url(media/images/Super_Mario_Final.gif);
+  background-image: url(/media/images/Super_Mario_Final.gif);
+}
+// Keep content clear of the notch and home indicator (viewport-fit=cover in index.html).
+// On #root, not body: reactstrap's Modal rewrites body padding-right when it opens and closes.
+#root {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 .forestCard {
   background-color: rgba(255, 250, 250, 0.53);
@@ -56,4 +59,29 @@ text, p, button {
   object-fit: contain;
    
   height: 120px; /* only if you want fixed height */  
+}
+
+.btn-game {
+  // Stops iOS double-tap zoom when the button is tapped quickly.
+  touch-action: manipulation;
+}
+
+// Touch screens and narrow windows: comfortable tap targets.
+@media (max-width: 991.98px), (pointer: coarse) {
+  .btn-game {
+    min-height: 44px;
+    min-width: 44px;
+    padding: .5rem 1.25rem;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 15px;
+  }
 }
