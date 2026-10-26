@@ -5,7 +5,9 @@ const mediaUrl = (path) => `${import.meta.env.BASE_URL}media/${path}`;
 // Sounds fetched ahead of time, as blob: URLs keyed by their media URL. Playing
 // from memory means a tap's sound starts at once instead of after a download.
 const warmed = new Map();
-let warmedSoundsPlay = true;
+// WebKit 15.4 and 15.4.1 cut blob: audio over 64 KB short without an error event
+// (fixed in Safari 15.5), so those versions play the plain files.
+let warmedSoundsPlay = !/OS 15_4(_\d+)? like Mac OS X|Version\/15\.4(\.\d+)? /.test(navigator.userAgent);
 
 // Three downloads at a time, so a sound tapped during warm-up isn't stuck
 // behind all of them on a slow connection.
