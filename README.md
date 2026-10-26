@@ -26,8 +26,6 @@ Live site: coming soon
 
 ![Collect a Full Basket Win](screenshots/fullBasketWin.png)
 
-![Full Basket Restart](screenshots/fullBasketRestartScreen.png)
-
 ![Pick a Deadly Mushroom](screenshots/deadlyMushroom.png)
 
 ## Run Locally

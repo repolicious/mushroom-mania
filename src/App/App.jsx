@@ -80,10 +80,7 @@ class App extends React.Component {
         <div className="row">
           <div className="col-12 col-lg-3 d-flex flex-lg-column justify-content-center justify-content-lg-start align-items-center">
             <div>
-              {
-              // eslint-disable-next-line max-len
-              basket.length !== totalNormalMushrooms || basket.length === 0 ? (<button className="btn btn-danger btn-game m-2" onClick={this.pickAMushroomEvent}>PICK MUSHROOM</button>) : (<button className="btn btn-danger btn-game ml-4 mr-4 mt-2 mb-2 " onClick={this.restart}>RESTART</button>)
-              }
+              <button className="btn btn-danger btn-game m-2" onClick={this.pickAMushroomEvent}>PICK MUSHROOM</button>
             </div>
             <div>
               <img className="mario" src={mediaUrl('images/Mario_Party_4.webp')} alt='mario'></img>
