@@ -45,7 +45,7 @@ class App extends React.Component {
     mushroomData.emptyBasket();
     mushroomData.getBasket();
     mushroomData.getMushrooms();
-    new Audio('https://themushroomkingdom.net/sounds/wav/sm64/sm64_here_we_go.wav').play();
+    new Audio('media/sounds/sm64_here_we_go.wav').play();
   }
 
 
@@ -86,7 +86,7 @@ class App extends React.Component {
               }
             </div>
             <div>
-              <img className="mario" src='https://www.mariowiki.com/images/thumb/e/eb/Mario_Artwork_-_Mario_Party_4.png/200px-Mario_Artwork_-_Mario_Party_4.png' alt='mario'></img>
+              <img className="mario" src='media/images/Mario_Party_4.png' alt='mario'></img>
             </div>
           </div>
           <div className="col-9">
