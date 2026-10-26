@@ -2,27 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#a2c3e7" />
-    <meta
-    name="description"
-    content="Help Mario fill his basket with one of each mushroom in the forest."
-    />
+    <meta name="description" content="Sarah Holder's Mushroom Mania (2020) and its arcade sequel, Mushroom Mania Mania." />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preload" href="/fonts/bungee-shade-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/press-start-2p-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/squada-one-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="/src/landing/landing.css" />
     <title>Mushroom MANIA</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <main>
+      <h1>MUSHROOM MANIA</h1>
+      <p class="pick">Pick your game</p>
+      <div class="games">
+        <a class="game" href="./classic/">
+          <img src="/media/images/Mario_Party_4.webp" alt="" width="200" height="262" />
+          <h2>Mushroom Mania</h2>
+          <p class="when">The original (2020)</p>
+          <p>Help Mario fill his basket with one of each normal mushroom. Pick the magic Psilocybe for an instant win, and beware the dangerous ones!</p>
+          <span class="btn">PICK MUSHROOM</span>
+        </a>
+        <a class="game mania" href="./mania/">
+          <img src="/media/images/Psilocybe.webp" alt="" width="200" height="240" />
+          <h2>Mushroom Mania <span class="stamp">MANIA</span></h2>
+          <p class="when">The arcade sequel (2026)</p>
+          <p>Mushrooms are raining from the sky! Catch them, chain combos, dodge Bowser and set off MUSHROOM MANIA.</p>
+          <span class="btn">HERE WE GO!</span>
+        </a>
+      </div>
+      <p class="credit">Mushroom Mania was made by <a href="https://github.com/sarahholder/mushroom-picker">Sarah Holder</a> in 2020. Brought back to life with love.</p>
+    </main>
   </body>
 </html>

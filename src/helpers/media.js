@@ -1,6 +1,9 @@
-// Media files live in public/media. Prefixing BASE_URL keeps the paths working
-// whether the site is served from a domain root or from a subpath.
-const mediaUrl = (path) => `${import.meta.env.BASE_URL}media/${path}`;
+// Media files live in public/media at the site root. This page is served from
+// /classic/, so resolve from the script's own location (built scripts live in
+// assets/, one level below the root) rather than the page. The dev server serves
+// the root at /. Works at a domain root or under any subpath.
+const ROOT = import.meta.env.DEV ? '/' : new URL(/* @vite-ignore */ '../', import.meta.url).href;
+const mediaUrl = (path) => `${ROOT}media/${path}`;
 
 // Sounds fetched ahead of time, as blob: URLs keyed by their media URL. Playing
 // from memory means a tap's sound starts at once instead of after a download.

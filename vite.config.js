@@ -12,7 +12,8 @@ export default defineConfig({
     target: ['chrome111', 'edge111', 'firefox114', 'safari15', 'ios15'],
     rolldownOptions: {
       input: {
-        main: 'index.html',
+        landing: 'index.html',
+        classic: 'classic/index.html',
         mania: 'mania/index.html',
       },
     },
