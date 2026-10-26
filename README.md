@@ -8,6 +8,8 @@ Mushroom Mania was created by [Sarah Holder](https://github.com/sarahholder) in 
 
 Live site: coming soon
 
+The site has three pages: `/` is a landing page to pick a game, `/classic/` is Sarah's original Mushroom Mania, and `/mania/` is Mushroom Mania Mania, an arcade sequel built from the same art and sounds.
+
 <strong> Project specifications found [here. </strong>](https://github.com/nss-nightclass-projects/exercise-vault/blob/master/REACT_mushroom_picker.md)
 
 ## Technologies & Tools

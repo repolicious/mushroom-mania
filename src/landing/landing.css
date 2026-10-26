@@ -1,0 +1,70 @@
+/* Sarah's three fonts, served from this site (SIL OFL 1.1, licences in public/fonts/). */
+@font-face { font-family: 'Bungee Shade'; font-display: swap; src: url(/fonts/bungee-shade-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Press Start 2P'; font-display: swap; src: url(/fonts/press-start-2p-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Squada One'; font-display: swap; src: url(/fonts/squada-one-latin.woff2) format('woff2'); }
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #a2c3e7 url(/media/images/Super_Mario_Final.gif);
+  color: #fff;
+  font-family: 'Squada One', 'Arial Narrow', sans-serif;
+  text-align: center;
+  -webkit-text-size-adjust: 100%;
+}
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: calc(env(safe-area-inset-top) + 20px) calc(env(safe-area-inset-right) + 16px) calc(env(safe-area-inset-bottom) + 24px) calc(env(safe-area-inset-left) + 16px);
+}
+h1 {
+  font: 34px/1.1 'Bungee Shade', Impact, sans-serif;
+  text-shadow: 2px 2px 8px rgb(247, 14, 14);
+  margin: 8px 0 4px;
+}
+h2 {
+  font: 16px/1.5 'Press Start 2P', monospace;
+  text-shadow: 2px 2px 8px rgb(247, 14, 14);
+  color: #fff;
+  margin: 10px 0 4px;
+}
+.pick { font: 12px 'Press Start 2P', monospace; text-shadow: 2px 2px 4px #000; margin: 4px 0 18px; }
+.games { display: grid; grid-template-columns: 1fr; gap: 18px; }
+.game {
+  display: flex; flex-direction: column; align-items: center; padding: 16px; border-radius: 8px;
+  background: rgba(255, 250, 250, .53); color: #212529; text-decoration: none; font-size: 18px;
+  box-shadow: 2px 2px 4px #000; transition: transform .15s ease-out; -webkit-tap-highlight-color: transparent;
+}
+.game:hover, .game:focus-visible { transform: scale(1.03); }
+.game:active { transform: scale(.98); }
+.game img { height: 150px; width: auto; filter: drop-shadow(0 0 12px #fff); }
+.game p { margin: 6px 0; }
+.when { font-size: 16px; color: #3a0a0a; }
+.mania {
+  border: 4px solid transparent;
+  background: linear-gradient(rgba(255, 250, 250, .62), rgba(255, 250, 250, .62)) padding-box,
+    linear-gradient(90deg, #ff2a2a, #ffa62b, #ffe14d, #5cff5c, #3dd6ff, #b44dff, #ff2fa0) border-box;
+}
+.stamp {
+  display: inline-block; transform: rotate(-7deg); font-family: 'Bungee Shade', Impact, sans-serif; font-size: 22px;
+  background: linear-gradient(90deg, #ff2a2a, #ffa62b, #ffe14d, #5cff5c, #3dd6ff, #b44dff, #ff2fa0);
+  -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none;
+  filter: drop-shadow(1px 1px 0 #3a0a0a);
+}
+.btn {
+  display: inline-block; margin-top: 10px; min-height: 48px; padding: 10px 24px; border-radius: 4px;
+  background: #dc3545; color: #fff; font-size: 22px; line-height: 28px;
+}
+.game:hover .btn { background: #c82333; }
+.credit { margin-top: 22px; font-size: 18px; text-shadow: 1px 1px 3px #000, 0 0 6px #000; }
+.credit a { color: #fff; }
+@media (min-width: 720px) {
+  h1 { font-size: 64px; }
+  .pick { font-size: 16px; }
+  .games { grid-template-columns: 1fr 1fr; }
+  .game img { height: 200px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game, .game:hover, .game:active { transform: none; transition: none; }
+}

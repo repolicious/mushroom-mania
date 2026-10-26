@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#a2c3e7" />
+    <meta name="description" content="Mushrooms are raining from the sky. Help Mario catch them!" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/bungee-shade-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/press-start-2p-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/squada-one-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <title>Mushroom Mania Mania</title>
+  </head>
+  <body>
+    <div id="mania">
+      <div id="stage"><canvas id="bg"></canvas><canvas id="fg"></canvas><div id="frame"></div></div>
+
+      <div id="hud" class="hidden">
+        <div class="row1">
+          <div id="lives" aria-label="Lives"></div>
+          <div class="scorebox">
+            <div id="score">0</div>
+            <div id="sub"></div>
+          </div>
+          <div class="hudbtns">
+            <button id="btn-mute" class="iconbtn fa" type="button" aria-label="Mute">&#xf028;</button>
+            <button id="btn-pause" class="iconbtn fa" type="button" aria-label="Pause">&#xf04c;</button>
+          </div>
+        </div>
+        <div id="strip" class="panel"><span id="strip-icons"></span><span id="strip-count">0/15</span></div>
+        <div id="combo" class="hidden"><div id="combo-text"></div><div class="combo-bar"><div id="combo-fill"></div></div></div>
+        <div id="maniabar" class="hidden"><div id="mania-label">MUSHROOM MANIA! x5</div><div class="mania-track"><div id="mania-fill"></div></div></div>
+      </div>
+
+      <section id="title" class="screen">
+        <div class="scroll">
+          <h1 class="title-h1">MUSHROOM MANIA</h1>
+          <div class="stamp">MANIA</div>
+          <h2 class="title-h2">Catch a Mushroom If you Dare</h2>
+          <div class="legend">
+            <div class="card"><img data-img="Dewdrop_Dapperling" alt="" draggable="false" /><b>Normal</b><span>catch 'em all!</span></div>
+            <div class="card"><img data-img="Purple_Jellydisc" alt="" draggable="false" /><b><i class="fa">&#xf7ba;</i> Poisonous</b><span>shrinks your basket</span></div>
+            <div class="card"><img data-img="Funeral_Bell" alt="" draggable="false" /><b><i class="fa">&#xf714;</i> Funeral Bell</b><span>Bowser takes a life</span></div>
+            <div class="card"><img data-img="Psilocybe" alt="" draggable="false" /><b><i class="fa">&#xf0d0;</i> Psilocybe</b><span>MUSHROOM MANIA!</span></div>
+          </div>
+          <div class="panel rules">
+            <p>Help Mario catch the mushrooms raining from the sky!</p>
+            <p class="touch-only">Drag anywhere to move him.</p>
+            <p class="fine-only">Move the mouse or use the arrow keys.</p>
+            <p>Catch them in a row for COMBOS. Collect one of each normal mushroom for a <b>FULL BASKET</b> and an extra life!</p>
+            <p>Catch the <b>PSILOCYBE</b> magic mushroom for <b>MUSHROOM MANIA!!!</b></p>
+            <p><b>BEWARE</b> of the dangerous mushrooms.</p>
+          </div>
+          <button id="btn-go" class="btn pulse" type="button" disabled>Picking mushrooms... 0/23</button>
+          <p id="title-best" class="best hidden"></p>
+          <p class="footer">A surprise sequel to Sarah Holder's Mushroom Mania (2020) | <a href="../classic/">Play the original</a></p>
+        </div>
+      </section>
+
+      <div id="ready" class="hidden"><div id="ready-text">READY?</div></div>
+
+      <section id="pause" class="screen hidden">
+        <div class="scroll">
+          <h2>PAUSED</h2>
+          <p id="pause-msg">Mario is catching his breath.</p>
+          <p id="pause-score" class="bigscore"></p>
+          <button id="btn-resume" class="btn" type="button">KEEP TRYING</button>
+          <button id="btn-sound" class="btn btn-outline" type="button">SOUND: ON</button>
+          <button id="btn-quit" class="btn btn-outline" type="button">QUIT</button>
+        </div>
+      </section>
+
+      <section id="over" class="screen hidden">
+        <div class="scroll">
+          <h3 class="over-h3">DEADLY MUSHROOM</h3>
+          <h2 id="over-title" class="over-h2" aria-label="GAME OVER"></h2>
+          <img id="over-bowser" class="bowser" alt="Bowser" draggable="false" />
+          <div id="over-clap" class="mario-clap hidden"></div>
+          <p id="over-score" class="bigscore">0</p>
+          <p id="over-line"></p>
+          <p id="over-rank" class="rank"></p>
+          <p id="over-stats" class="stats"></p>
+          <p id="over-tip" class="tip"></p>
+          <button id="btn-again" class="btn" type="button">Play Again</button>
+          <p><a href="../" class="link">Back to the Forest</a></p>
+        </div>
+      </section>
+
+      <section id="rotate" class="screen hidden">
+        <div class="scroll">
+          <img id="rotate-img" alt="" draggable="false" />
+          <p>Mario needs the whole sky! Turn your phone upright.</p>
+        </div>
+      </section>
+
+      <div id="probe"></div>
+      <div id="debug" class="hidden"></div>
+    </div>
+    <script type="module" src="/src/mania/main.js"></script>
+  </body>
+</html>

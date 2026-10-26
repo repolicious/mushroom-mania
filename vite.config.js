@@ -10,5 +10,12 @@ export default defineConfig({
     // instead: older Safari ignores range media queries like (width<=575.98px),
     // and this keeps the CSS on min-/max-width (cssTarget follows target).
     target: ['chrome111', 'edge111', 'firefox114', 'safari15', 'ios15'],
+    rolldownOptions: {
+      input: {
+        landing: 'index.html',
+        classic: 'classic/index.html',
+        mania: 'mania/index.html',
+      },
+    },
   },
 });
