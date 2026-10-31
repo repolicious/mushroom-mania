@@ -6,7 +6,7 @@ Time to help Mario collect one of each mushroom in the forest. Using React under
 
 Mushroom Mania was created by [Sarah Holder](https://github.com/sarahholder) in 2020. This repository is a copy of her original project, [sarahholder/mushroom-picker](https://github.com/sarahholder/mushroom-picker), with its full history. It has been updated to build with Vite, play well on phones, and serve its images, sounds and fonts locally instead of hotlinking them.
 
-Live site: coming soon
+Live site: https://mm.matthewknops.com
 
 The site has three pages: `/` is a landing page to pick a game, `/classic/` is Sarah's original Mushroom Mania, and `/mania/` is Mushroom Mania Mania, an arcade sequel built from the same art and sounds.
 

@@ -1,9 +1,12 @@
-// Cloudflare Workers static assets: serves the Vite build in ./dist.
-// No routes or custom domain yet; add them here once the domain is chosen.
+// Cloudflare Workers static assets: serves the Vite build in ./dist
+// at https://mm.matthewknops.com (Cloudflare creates the DNS record on deploy).
 {
   "name": "mushroom-mania",
   "compatibility_date": "2026-10-19",
   "assets": {
     "directory": "./dist"
-  }
+  },
+  "routes": [
+    { "pattern": "mm.matthewknops.com", "custom_domain": true }
+  ]
 }
