@@ -1,0 +1,9 @@
+// Cloudflare Workers static assets: serves the Vite build in ./dist.
+// No routes or custom domain yet; add them here once the domain is chosen.
+{
+  "name": "mushroom-mania",
+  "compatibility_date": "2026-10-19",
+  "assets": {
+    "directory": "./dist"
+  }
+}
