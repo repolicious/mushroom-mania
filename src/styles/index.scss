@@ -1,8 +1,29 @@
-@import 'variables';
-@import '~bootstrap/dist/css/bootstrap.min.css';
-@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@use 'variables' as *;
+// Sarah's three Google Fonts, served from this site (SIL OFL 1.1, licences in public/fonts/).
+@font-face {
+  font-family: 'Bungee Shade';
+  font-display: swap;
+  src: url(/fonts/bungee-shade-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Press Start 2P';
+  font-display: swap;
+  src: url(/fonts/press-start-2p-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Squada One';
+  font-display: swap;
+  src: url(/fonts/squada-one-latin.woff2) format('woff2');
+}
 body {
-  background-image: url(media/images/Super_Mario_Final.gif);
+  // Sky blue from the background GIF: shows before it loads and in iOS overscroll.
+  background-color: #a2c3e7;
+  background-image: url(/media/images/Super_Mario_Final.gif);
+}
+// Keep content clear of the notch and home indicator (viewport-fit=cover in index.html).
+// On #root, not body: reactstrap's Modal rewrites body padding-right when it opens and closes.
+#root {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 .forestCard {
   background-color: rgba(255, 250, 250, 0.53);
@@ -11,6 +32,14 @@ body {
   max-width: 140px;
   min-width: 50px;
   text-align: center;
+}
+// Very narrow phones (iPhone SE 1st gen, or a mini/SE with Display Zoom) are 320px wide.
+// Slimmer cards keep the forest two across there instead of one long column.
+@media (max-width: 359.98px) {
+  .forestCard {
+    margin: 5px;
+    max-width: 130px;
+  }
 }
 
 .mushroomCard {
@@ -22,26 +51,28 @@ body {
   text-align: center;
 }
 h1 {
-  font-family: 'Bungee Shade', cursive;
+  font-family: 'Bungee Shade', Impact, sans-serif;
   text-shadow: 2px 2px 8px rgb(247, 14, 14);
   font-size: calc(40px + .5vw);
   margin-top: 20px;
   margin-bottom: 40px;
   }
 h2 {
-  font-family: 'Press Start 2P', cursive ;
+  font-family: 'Press Start 2P', monospace;
   text-shadow: 2px 2px 8px rgb(247, 14, 14);
   font-size: calc(20px + .5vw);
   margin-top: 20px;
   margin-bottom: 40px;
+  // Even line lengths when a heading wraps (no lone "Dare"); older browsers ignore it.
+  text-wrap: balance;
 }
 h3, h4 {
   font-size: calc(15px + .5vw);
-  font-family: 'Squada One', cursive;
+  font-family: 'Squada One', 'Arial Narrow', sans-serif;
   margin: 0px;
 }
 text, p, button {
-  font-family: 'Squada One', cursive;
+  font-family: 'Squada One', 'Arial Narrow', sans-serif;
   font-size: calc(10px + .5vw);
   margin: 0px;
 }
@@ -56,4 +87,47 @@ text, p, button {
   object-fit: contain;
    
   height: 120px; /* only if you want fixed height */  
+}
+
+.btn-game {
+  // Stops iOS double-tap zoom when the button is tapped quickly.
+  touch-action: manipulation;
+}
+
+// A mouse click doesn't leave Bootstrap's focus ring on the game buttons; keyboard focus still shows it.
+.btn-game:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+// Touch screens: iOS leaves a tapped button in its :hover shade, which hides the pressed shade.
+@media (hover: none) {
+  .btn-danger.btn-game:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+}
+
+// Touch screens and narrow windows: comfortable tap targets.
+@media (max-width: 991.98px), (pointer: coarse) {
+  .btn-game {
+    min-height: 44px;
+    min-width: 44px;
+    padding: .5rem 1.25rem;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 15px;
+  }
+  // Four basket mushrooms per row on a phone, so new picks stay in view.
+  .mushroomCard {
+    margin: 4px;
+    max-width: 76px;
+  }
 }

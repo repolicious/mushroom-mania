@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.modal {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
 .modal-content {
   background-color: rgba(255, 255, 255, 0);
   border: none;
@@ -13,6 +17,11 @@
 .modal-p{
   color: white;
   font-size: calc(7px + .5vw);
+}
+// A soft dark halo keeps the white text readable over the page that shows through
+// the transparent modal. h2.modal-p (GAME OVER / You WIN!) keeps its red glow.
+p.modal-p, h3.modal-p {
+  text-shadow: 0 0 2px #000, 0 0 6px #000;
 }
 .img-fluid{
   max-width:40%;
@@ -39,20 +48,22 @@
 .mario-clap {
   margin: auto;
   width: 60vh;
+  max-width: 100%;
   height: 70vh;
-  background-image: url(media/images/Mario_Clap.png);
-  background-size: 80% 80%;
+  background-image: url(/media/images/Mario_Clap.webp);
   background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
   animation: shrink .2s infinite alternate;
   -webkit-filter: drop-shadow(5px 5px 5px rgb(255, 255, 255)); filter: drop-shadow(0px 0px 100px #ffffff);
   
 }
 @keyframes shrink {
   0% {
-    background-size: 98% 98%;
+    transform: scale(.98);
   }
   100% {
-    background-size: 102% 102%;
+    transform: scale(1.02);
   }
 }
 
@@ -64,4 +75,48 @@
 @keyframes anim {
   from {transform: rotateY(0deg);}
   to {transform: rotateY(360deg);}
+}
+
+// Touch screens and narrow windows (phones either way up, tablets): readable modal text.
+@media (max-width: 991.98px), (pointer: coarse) {
+  .modal-p {
+    font-size: 15px;
+  }
+}
+
+// Phones: the win art leaves room for the heading and button.
+@media (max-width: 575.98px) {
+  .mario-clap {
+    height: 45vh;
+  }
+}
+
+// Phones turned sideways: smaller margins and art, so each modal fits without scrolling.
+@media (orientation: landscape) and (max-height: 500px) {
+  .modal-dialog {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+  }
+  .modal-dialog-centered {
+    min-height: calc(100% - .5rem);
+  }
+  .modal-body {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+  }
+  .img-fluid {
+    max-height: 30vh;
+    max-height: 30svh;
+  }
+  .mario-clap {
+    height: 50vh;
+    height: 50svh;
+  }
+}
+
+// Respect the "Reduce Motion" setting (iPhone, macOS, Windows): hold the modal art still.
+@media (prefers-reduced-motion: reduce) {
+  .bowser, .magic, .mario-clap {
+    animation: none;
+  }
 }
